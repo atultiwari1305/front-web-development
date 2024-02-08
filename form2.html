@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <fieldset>
+        <legend><h1><b>REGISTRATION FORM</b></h1></legend>
+        <form onsubmit="return validation()">
+            <label for="userName">Name: </label>
+            <input type="text" id="userName" placeholder="Enter your Name"><br><br>
+            <label for="userEmail">Email: </label>
+            <input type="email" id="userEmail" placeholder="abc@gmail.com"><br><br>
+            <label for="userPass">Password: </label>
+            <input type="password" id="userPass" placeholder="Enter your Password"><br><br>
+            <label for="confirmPass">Confirm Password: </label>
+            <input type="password" id="confirmPass" placeholder="Confirm your Password"><br><br>
+            <label for="">Gender: </label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="others" name="gender" value="others">
+            <label for="others">Others</label><br><br>
+            <label for="userAge">Age: </label>
+            <input type="number" id="userAge" min="18" max="80" placeholder="Enter your Age" p><br><br>
+            <label for="userDOB">Date of Birth: </label>
+            <input type="date" id="userDOB" placeholder="DD-MM-YYYY" ><br><br>
+            <label for="country">Country: </label>
+            <select name="country" id="country">
+                <option value="default">Select your Country</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="China">China</option>
+                <option value="Denmark">Denmark</option>
+                <option value="England">England</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Russia">Russia</option>
+            </select><br><br>
+            <input type="checkbox" id="terms">
+            <label for="terms">I, accept the <a href="#">Terms and Conditions</a>.</label><br><br>
+            <button id="btn">Submit</button>
+        </form>
+    </fieldset><br><br>
+
+    <script>
+        function validation(){
+            if(document.getElementById("userName").value == "Atul"){
+                document.write("JAI SHREE RAM");
+            }
+            else{
+                document.write("ALLAH");
+            }
+        }
+    </script>
+</body>
+</html>

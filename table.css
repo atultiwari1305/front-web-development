@@ -1,0 +1,37 @@
+.t{
+    border-collapse: collapse;
+    font-size: 15px;
+    width: 95%;
+    margin: auto;
+
+}
+body{
+    background-image: url("");
+}
+th,td{
+    border: 2px solid black;
+    padding: 5px;
+    box-sizing: border-box;
+    height: 70px;
+    width: 2%;
+    
+}
+h1{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+th{
+    background-color: rgb(255, 238, 0);
+}
+tr:nth-child(even)
+{
+    background-color: #D6EEEE;
+}
+td:hover
+{
+    background-color: rgb(255, 0, 0);
+    
+    
+}

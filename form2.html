@@ -7,9 +7,9 @@
 </head>
 <body>
     
-    <fieldset>
+    <fieldset style="width: fit-content; margin: auto;">
         <legend><h1><b>REGISTRATION FORM</b></h1></legend>
-        <form onsubmit="return validation()">
+        <form novalidate onsubmit="return validation()">
             <label for="userName">Name: </label>
             <input type="text" id="userName" placeholder="Enter your Name"><br><br>
             <label for="userEmail">Email: </label>
@@ -51,12 +51,13 @@
 
     <script>
         function validation(){
-            if(document.getElementById("userName").value == "Atul"){
-                document.write("JAI SHREE RAM");
+
+            if(document.getElementById("userName").value == ""){
+                document.getElementById("userName").placeholder = "*Input Required";  
             }
-            else{
-                document.write("ALLAH");
-            }
+            
+            event.preventDefault();
+
         }
     </script>
 </body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <fieldset style="width: fit-content; margin: auto;">
+        <legend><h1><b>REGISTRATION FORM</b></h1></legend>
+        <form novalidate onsubmit="return validation()">
+            <label for="userName">Name: </label>
+            <input type="text" id="userName" placeholder="Enter your Name"><br><br>
+            <label for="userEmail">Email: </label>
+            <input type="email" id="userEmail" placeholder="abc@gmail.com"><br><br>
+            <label for="userPass">Password: </label>
+            <input type="password" id="userPass" placeholder="Enter your Password"><br><br>
+            <label for="confirmPass">Confirm Password: </label>
+            <input type="password" id="confirmPass" placeholder="Confirm your Password"><br><br>
+            <label for="message">Message: </label>
+            <textarea name="message" id="messageArea" cols="30" rows="10"></textarea><br><br>
+            <span id="errorText"></span>
+            <button id="btn">Submit</button>
+        </form>
+    </fieldset><br><br>
+    <script>
+        function validation(){
+
+            if(document.getElementById("userName").value == "" || document.getElementById("userPass").value.length < 8){
+                document.getElementById("errorText").outerHTML = "Something went Wrong<br><br>";  
+            }
+            
+            event.preventDefault();
+
+        }
+    </script>
+</body>
+</html>

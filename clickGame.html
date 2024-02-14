@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atul's Game</title>
+</head>
+<body style="margin: auto; width: 100vh;">
+    <button id="start" onclick="incre()" style="margin: auto; width: 400px; height: 150px;">INCREMENT</button>
+    <button id="stop" onclick="decre()" style="margin: auto; width: 400px; height: 150px;">DECREMENT</button>
+    <div id="counter" style="text-align: center; font-size: 150px;"></div>
+    <div id="game"></div>
+    
+    <script>
+        let count=0;
+        document.getElementById("counter").innerHTML = `Counter : ${count}`;
+        function incre(){
+            if(count<5){
+                document.getElementById("game").innerHTML = "";
+                count++;
+            }
+            else{
+                document.getElementById("game").innerHTML = "GAME OVER!!!";
+                document.getElementById("game").style.fontSize = "100px";
+                document.getElementById("game").style.textAlign ="center"
+                document.getElementById("game").style.color ="red"
+            }
+            document.getElementById("counter").innerHTML = `Counter : ${count}`;
+        }
+        function decre(){
+            if(count>0){
+                count--;
+                document.getElementById("game").innerHTML = "";
+            }
+            else{
+                document.getElementById("game").innerHTML = "GAME OVER!!!";
+                document.getElementById("game").style.fontSize = "100px";
+                document.getElementById("game").style.textAlign ="center"
+                document.getElementById("game").style.color ="red"
+            }
+            document.getElementById("counter").innerHTML = `Counter : ${count}`;
+        }
+    </script>
+</body>
+</html>

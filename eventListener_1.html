@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; flex-direction: row; margin: auto;">
+    <div id="parent1" style=" border:10px solid black; height: 500px; width: 600px; margin: auto; display: flex; flex-direction: row;">
+        <div id="parent2" style=" border:10px solid black; height: 70%; width: 70%; margin: auto; display: flex; flex-direction: row;">
+            <div id="parent3" style=" border:10px solid black; height: 50%; width: 50%; margin: auto; display: flex; flex-direction: row;">
+                <div id="child" style=" border:10px solid black; height: 30%; width: 30%; margin: auto; display: flex; flex-direction: row;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("child").addEventListener("click", function(){
+            this.style.transform = "rotate(45deg)";
+        });
+
+        document.getElementById("parent3").addEventListener("click", function(){
+            this.style.transform = "rotate(45deg)";
+        });
+
+        document.getElementById("parent2").addEventListener("click", function(){
+            this.style.transform = "rotate(45deg)";
+        });
+
+    </script>
+</body>
+</html>

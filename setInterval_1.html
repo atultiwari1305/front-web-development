@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="timer" style="border: 2px solid black; width: 100%; height: 50vh; display: flex; flex-direction: row; margin: auto;" >
+        <div id="hrs" style="border: 2px solid black; width: 25%; height: 30vh; margin: auto;"></div>
+        <h1>:</h1>
+        <div id="mins" style="border: 2px solid black; width: 25%; height: 30vh; margin: auto;"></div>
+        <h1>:</h1>
+        <div id="sec" style="border: 2px solid black; width: 25%; height: 30vh; margin: auto;"></div>
+    </div>
+    <script>
+        document.getElementById("timer").style.fontSize = "200px";
+        document.getElementById("timer").style.textAlign = "center"
+        let hrs = document.getElementById("hrs");
+        let mins = document.getElementById("mins");
+        let sec = document.getElementById("sec");
+        setInterval(()=>{
+            let date = new Date();
+            let hours = date.getHours();
+            let mints = date.getMinutes();
+            let secs = date.getSeconds();
+            hrs.innerHTML = hours;
+            mins.innerHTML = mints;
+            sec.innerHTML = secs;
+        },1000)
+    </script>
+</body>
+</html>

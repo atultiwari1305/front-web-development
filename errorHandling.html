@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Try Catch</title>
+</head>
+<body>
+    <h2>Input a number between 5 and 10</h2>
+    <input type="number" id="inputText">
+    <button onclick="myFunction()">Submit</button>
+
+    <script>
+        function myFunction(){
+            let x = document.getElementById("inputText").value;
+            const colorCollection = ['red','white'];
+            const colorCollection2 = ['green','white'];
+            let i = 0;
+            try{
+                if(x=="") throw err
+                if(isNaN(x)) throw err
+                x=Number(x);
+                if(x>10) throw err
+                if(x<5) throw err
+                if(x>=5 && x<=10){
+                    setInterval(()=>{
+                    document.body.style.backgroundColor = colorCollection2[i];
+                    i=(i+1)%colorCollection2.length;
+                },10)
+                }
+            }
+            catch(err){
+                setInterval(()=>{
+                    document.body.style.backgroundColor = colorCollection[i];
+                    i=(i+1)%colorCollection.length;
+                },10)
+            }
+        }
+    </script>
+</body>
+</html>

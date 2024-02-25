@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <img src="" alt="" id="slide" width="25%" height="25%">
+    <script>
+        var i=0;
+        var images = Array();
+        images[0]= '01.png';
+        images[1]= '02.png';
+        images[2]= '03.png';
+        images[3]= '/Assets/Images/04.png';
+        images[4]= '/Assets/Images/05.png';
+        images[5]= '/Assets/Images/06.png';
+        images[6]= '/Assets/Images/07.png';
+        images[7]= '/Assets/Images/08.png';
+        images[8]= '/Assets/Images/09.png';
+        images[9]= '/Assets/Images/10.png';
+        images[10]= '/Assets/Images/11.png';
+        images[11]= '/Assets/Images/12.png';
+
+        function changeImages(){
+            document.getElementById('slide').src = images[i];
+            if(i<images.length-1){
+                i++;
+            }
+            else{
+                i=0;
+            }
+            setTimeout(changeImages, 1000);
+        }
+
+
+        changeImages();
+    </script>
+</body>
+</html>

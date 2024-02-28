@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+</head>
+<body>
+    <div>
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName">
+        <label for="attendance">Attendance (%):</label>
+        <input type="number" id="attendance" min="0" max="100">
+        <button id="addButton">Add Student</button>
+    </div>
+
+    <ul id="studentList"></ul>
+    <button id="removeButton">Remove Students with Attendance < 75%</button>
+
+    <script>
+        let students = [];
+
+        function renderStudentList() {
+            const studentListElement = document.getElementById('studentList');
+            studentListElement.innerHTML = '';
+
+            students.forEach(student => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${student.name} - ${student.attendance}%`;
+                studentListElement.appendChild(listItem);
+            });
+        }
+
+        function addStudent() {
+            const studentNameInput = document.getElementById('studentName');
+            const attendanceInput = document.getElementById('attendance');
+            const name = studentNameInput.value.trim();
+            const attendance = parseInt(attendanceInput.value);
+
+            if (name !== "" && !isNaN(attendance) && attendance >= 0 && attendance <= 100) {
+                students.push({ name, attendance });
+                renderStudentList();
+                studentNameInput.value = ""; // Clear input fields
+                attendanceInput.value = "";
+            } else {
+                alert("Please enter valid student name and attendance percentage.");
+            }
+        }
+
+        function removeLowAttendanceStudents() {
+            students = students.filter(student => student.attendance >= 75);
+            renderStudentList();
+        }
+
+        document.getElementById('addButton').addEventListener('click', addStudent);
+        document.getElementById('removeButton').addEventListener('click', removeLowAttendanceStudents);
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="studentFinder" style="border: 1px solid black; width: 300px; height: 300px; margin: auto; display: flex; justify-content: center; align-items: center;"></div>
+    <button id="startButton" style="display: flex; margin: auto; justify-content: center; align-items: center;">Start</button>
+    <button id="stopButton" style="display: flex; margin: auto; justify-content: center; align-items: center;">Remove</button> 
+    <div id="approver" style="border: 1px solid black; width: 200px; height: 50px; margin: auto; display: flex; justify-content: center; align-items: center;"></div>   
+    <script>
+        let students = [
+            'Student1',  'Student2',
+            'Student3',  'Student4',
+            'Student5',  'Student6',
+            'Student7',  'Student8',
+            'Student9',  'Student10',
+            'Student11', 'Student12',
+            'Student13', 'Imposter',
+            'Student15', 'Student16',
+            'Student17', 'Student18',
+            'Student19', 'Student20'
+        ];
+
+        var intervalId;
+        var i = 0;
+
+        function changeName() {
+            const studentFinder = document.getElementById("studentFinder");
+            studentFinder.style.fontSize= "40px";
+            const approver = document.getElementById("approver");
+            studentFinder.innerHTML = students[i];
+            if(students[i]!="Imposter"){
+                approver.style.backgroundColor = "green";
+                approver.style.fontSize = "30px";
+                approver.innerHTML = "Approved✅";
+            }
+            else {
+                approver.style.backgroundColor = "red";
+                approver.style.fontSize = "30px";
+                approver.innerHTML = "Removed❌";
+                students.splice(i, 1); // Remove the imposter from the array
+                i--; // Decrement i to stay at the same index after removal
+            }
+            i = (i + 1) % students.length;
+        }
+
+        document.getElementById("startButton").addEventListener("click", function() {
+            intervalId = setInterval(changeName, 800);
+        });
+
+        document.getElementById("stopButton").addEventListener("click", function() {
+            clearInterval(intervalId);
+        });
+    </script>
+</body>
+</html>

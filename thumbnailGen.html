@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imgStyle{
+            width: 92px;
+            height: 100px;
+            border: 3px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <img src="01.png" alt="" id="mainImg" style="border: 3px solid grey;" height="500px" width="500px"><br>
+    <div id="divId" onclick="changeImageOnClick()" onmouseover="f1()" onmouseout="f2()">
+        <img src="01.png" id="2" class="imgStyle" alt="">
+        <img src="02.png" id="3" class="imgStyle" alt="">
+        <img src="03.png" id="4" class="imgStyle" alt="">
+        <img src="04.png" id="5" class="imgStyle" alt="">
+        <img src="05.png" id="6" class="imgStyle" alt="">
+    </div>
+    <script>
+        function changeImageOnClick(){
+            if(x.tagName=="IMG"){
+                a=x.getAttribute("src");
+                document.getElementById("mainImg").setAttribute("src",a);
+            }
+        }
+        function f1(){
+            x=event.target;
+            x.style.cursor = 'pointer';
+            x.style.borderColor = 'red';
+        }
+        function f2(){
+            x=event.target;
+            x.style.borderColor = 'grey';
+        }
+    </script>
+</body>
+</html>

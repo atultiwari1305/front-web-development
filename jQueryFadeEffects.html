@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            height: 100px;
+            width: 300px;
+            background-color: red;
+            color: white;
+            font-size: larger;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <img src="/01.png" id="img1"><br>
+    <button class="btn" id="fadeIn-btn">Fade In</button>
+    <button class="btn" id="fadeOut-btn">Fade Out</button>
+    <button class="btn" id="toggle-btn">Fade Toggle</button>
+    <button class="btn" id="fadeTo-btn">Fade To</button>
+    <button class="btn" id="fadeTo2-btn">Fade To</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#fadeIn-btn").click(function(){
+                $("#img1").fadeIn(1000);
+            });
+            $("#fadeOut-btn").click(function(){
+                $("#img1").fadeOut(1000);
+            });
+            $("#toggle-btn").click(function(){
+                $("#img1").fadeToggle(1000);
+            });
+            $("#fadeTo-btn").click(function(){
+                $("#img1").fadeTo(1000,0.5);
+            });
+            $("#fadeTo2-btn").click(function(){
+                $("#img1").fadeTo(1000,1);
+            });
+        });
+    </script>
+</body>
+</html>

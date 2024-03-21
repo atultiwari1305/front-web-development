@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            height: 100px;
+            width: 300px;
+            background-color: red;
+            color: white;
+            font-size: larger;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <img src="/01.png" id="img1"><br>
+    <button id="hide-btn" class="btn">HIDE IMAGE🙈</button>
+    <button id="show-btn" class="btn">SHOW IMAGE🫣</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hide-btn").click(function(){
+                $("#img1").hide();
+            });
+            $("#show-btn").click(function(){
+                $("#img1").show();
+            });
+        });
+    </script>
+</body>
+</html>

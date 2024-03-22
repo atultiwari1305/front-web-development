@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            height: 100px;
+            width: 300px;
+            background-color: red;
+            color: white;
+            font-size: larger;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <img src="/01.png" id="img1"><br>
+    <button id="up-btn" class="btn">SLIDE UP</button>
+    <button id="down-btn" class="btn">SLIDE DOWN</button>
+    <button id="toggle-btn" class="btn">SLIDE TOGGLE</button><br>
+    <img src="/02.png" id="img2">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#up-btn").click(function(){
+                $("#img1").slideUp(10000);
+                $("#img2").slideDown(10000);
+            });
+            $("#down-btn").click(function(){
+                $("#img1").slideDown(10000);
+                $("#img2").slideUp(10000);
+            });
+            $("#toggle-btn").click(function(){
+                $("#img1").slideToggle();
+            });
+        });
+    </script>
+</body>
+</html>
